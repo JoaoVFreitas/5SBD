@@ -1,0 +1,12 @@
+//Fazer sql de consulta a alunos matriculados por turma.
+SELECT aluno.Nome FROM aluno
+INNER JOIN alunoturma ON aluno.Id = alunoturma.IdAluno 
+INNER JOIN turma ON alunoturma.IdTurma = turma.Id
+WHERE turma.Id = INSIRA AQUI O ID DA TURMA
+
+
+//Fazer outra consulta com a nota AV1, AV2, Media e quantidade de faltas por aluno em uma turma.
+SELECT alunoturma.AV1, alunoturma.AV2, alunoturma.Media, alunoturma.Falta FROM alunoturma
+INNER JOIN aluno ON alunoturma.IdAluno = aluno.Id
+WHERE aluno.Id = INSIRA AQUI O ID DO ALUNO
+AND alunoturma.Status = "Ativo"
